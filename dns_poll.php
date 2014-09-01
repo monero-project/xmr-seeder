@@ -54,7 +54,8 @@ try
 	foreach ($peerconnections['connections'] as $peer)
 	{
 		// Filter out anything not on port 18080 (we can't have ports in A records, and this also precludes most peers that don't allow incoming connections)
-		if ($peer['port'] == 18080)
+		// Also filter out anything not in "state_normal" (eg. pre-handshake or similar)
+		if (($peer['port'] == 18080) && ($peer['state'] == 'state_normal'))
 		{
 			$peerlist[] = $peer['ip'];
 		}
