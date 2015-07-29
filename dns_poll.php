@@ -97,6 +97,8 @@ try
 		$zoneversion = 3;
 	}
 
+	echo $zoneversion."...";
+
 	// Grab the zone records *from the version we're editing* (we don't care about the currently active zone version, we're going to switch away from it)
 	$zonerecords = $record_api->list($apikey, $zoneid, $zoneversion);
 
@@ -108,6 +110,8 @@ try
 			$deleterecord = $record_api->delete($apikey, $zoneid, $zoneversion, array('id' => $record['id']));
 		}
 	}
+
+	array_unique($peerlist);
 
 	// Take our new peer list and add them as A records
 	foreach ($peerlist as $peerip)

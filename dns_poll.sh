@@ -30,6 +30,6 @@
 
 while true
 do
-	php dns_poll.php &
+	php ~/xmr-seeder/dns_poll.php &
 	sleep 300
 done

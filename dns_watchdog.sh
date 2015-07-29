@@ -31,5 +31,5 @@
 
 if ! pgrep dns_poll.sh > /dev/null
 then
-	screen -S xmr_seeder -d -m ~/xmr_seeder/dns_poll.sh 
+	screen -S xmr-seeder -d -m ~/xmr-seeder/dns_poll.sh 
 fi
