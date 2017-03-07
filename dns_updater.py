@@ -43,7 +43,7 @@ class CloudFlareDNS:
         for k, v in self.get_current_entries(subdomain).items():
             if k not in entries['current'].keys():
                 print("Removing DNS entry: {} for IP {}".format(k, v))
-                self.cf.zones.dns_records.delete(k)
+                self.cf.zones.dns_records.delete(self.zone_id, k)
         for new_ip in entries['new']:
             print("Adding DNS entry for IP {}".format(new_ip))
             self.cf.zones.dns_records.post(self.zone_id,
@@ -55,6 +55,7 @@ def test_p2p_connectivity(ip, port):
     s = socket.socket()
     return_state = False
     try:
+        s.settimeout(1)
         s.connect((ip, int(port)))
         return_state = True
     except Exception as e:
