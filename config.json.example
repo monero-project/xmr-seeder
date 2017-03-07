@@ -1,0 +1,27 @@
+{
+  "loop": true,
+  "delay": 300,
+  "debug": false,
+  "zones": {
+  "domain-mainnet": {
+    "domain": "domain.com",
+    "provider": "cloudflare",
+    "login": "your_email_here",
+    "password": "312089eh2938",
+    "subdomain": "mainnet",
+    "rpc_host": "127.0.0.1",
+    "rpc_port": "18081",
+    "required_port": "18080"
+  },
+  "domain-testnet": {
+    "domain": "domain.com",
+    "provider": "cloudflare",
+    "login": "your_email_here",
+    "password": "312089eh2938",
+    "subdomain": "testnet",
+    "rpc_host": "127.0.0.1",
+    "rpc_port": "28081",
+    "required_port": "28080"
+  }
+  }
+}
